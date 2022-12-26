@@ -1,19 +1,17 @@
 import { Component, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-main-content',
+  templateUrl: './main-content.component.html',
+  styleUrls: ['./main-content.component.scss']
 })
-export class AppComponent {
-
-  title = 'KonoCRM';
+export class MainContentComponent {
 
   @ViewChild('hamburger') hamburger: any;
   @ViewChild('drawer') drawer: any;
-  
 
-  updateSidenav(){
+
+  updateBtn(){
     let button = this.hamburger.nativeElement;
     const currentState = button.getAttribute("data-state");
     console.log(currentState);
