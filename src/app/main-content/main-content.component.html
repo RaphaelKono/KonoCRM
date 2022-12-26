@@ -1,1 +1,18 @@
-<p>main-content works!</p>
+<div class="main-content">
+    <mat-toolbar color="primary" *ngIf="true">
+        <mat-toolbar-row class="main-toolbar">
+            <button (click)="updateSidenav()" class="button-one" aria-controls="primary-navigation" aria-expanded="true" data-state="opened" #hamburger>
+                <svg fill="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="48">
+                  <rect class="line top" width="80" height="10" x="10" y="25" rx="5">
+                  </rect>
+                  <rect class="line middle" width="80" height="10" x="10" y="45" rx="5">
+                  </rect>
+                  <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5">
+                  </rect>
+                </svg>
+              </button>
+            <span>KonoCRM</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet style="display: flex; align-items: center; justify-content:center; height:calc(100vh - 64px);">Hallo</router-outlet>
+</div>

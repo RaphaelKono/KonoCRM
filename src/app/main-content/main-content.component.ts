@@ -11,7 +11,7 @@ export class MainContentComponent {
   @ViewChild('drawer') drawer: any;
 
 
-  updateBtn(){
+  updateSidenav(){
     let button = this.hamburger.nativeElement;
     const currentState = button.getAttribute("data-state");
     console.log(currentState);

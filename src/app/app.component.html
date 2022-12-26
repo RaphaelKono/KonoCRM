@@ -1,9 +1,10 @@
 <mat-drawer-container class="app-container" autosize>
-    <mat-drawer class="sidenav" mode="side" [opened]="true" #drawer>
+    <mat-drawer class="sidenav" mode="side" [opened]="true" #drawer *ngIf="true">
         <app-main-sidenav></app-main-sidenav>
     </mat-drawer>
-    <div class="main-content">
-        <mat-toolbar color="primary">
+    <app-main-content></app-main-content>
+    <!-- <div class="main-content">
+        <mat-toolbar color="primary" *ngIf="true">
             <mat-toolbar-row class="main-toolbar">
                 <button (click)="updateSidenav()" class="button-one" aria-controls="primary-navigation" aria-expanded="true" data-state="opened" #hamburger>
                 <svg fill="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="48">
@@ -18,7 +19,9 @@
                 <span>KonoCRM</span>
             </mat-toolbar-row>
         </mat-toolbar>
-        <router-outlet></router-outlet>
-    </div>
+        <router-outlet style="display: flex; align-items: center; justify-content:center; height:calc(100vh - 64px);">Hallo</router-outlet>
+    </div> -->
 
 </mat-drawer-container>
+
+<!-- Put in *ngIfs for router outlet for login-router -->
