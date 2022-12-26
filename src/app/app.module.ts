@@ -11,12 +11,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MainSidenavComponent } from './main-sidenav/main-sidenav.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainSidenavComponent,
-    MainContentComponent
+    MainContentComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

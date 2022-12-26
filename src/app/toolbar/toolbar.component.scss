@@ -1,0 +1,53 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.main-toolbar {
+    gap: 1rem;
+}
+
+.button-one {
+    --button-color: white;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+}
+
+.button-one .line {
+    transition: y 150ms ease-in 150ms, rotate 150ms ease-in, opacity 0ms 150ms;
+    transform-origin: center;
+    -webkit-transition: y 150ms ease-in 150ms, rotate 150ms ease-in, opacity 0ms 150ms;
+    -webkit-transform-origin: center;
+    -moz-transition: y 150ms ease-in 150ms, rotate 150ms ease-in, opacity 0ms 150ms;
+    -moz-transform-origin: center;
+}
+
+.button-one[aria-expanded="true"] .line {
+    transition: y 150ms ease-in, rotate 150ms ease-in 150ms, opacity 0ms 150ms;
+    -webkit-transition: y 150ms ease-in, rotate 150ms ease-in 150ms, opacity 0ms 150ms;
+    -moz-transition: y 150ms ease-in, rotate 150ms ease-in 150ms, opacity 0ms 150ms;
+}
+
+.button-one[aria-expanded="true"] :is(.top, .bottom) {
+    y: 45;
+}
+
+.button-one[aria-expanded="true"] .top {
+    rotate: 45deg;
+}
+
+.button-one[aria-expanded="true"] .middle {
+    opacity: 0;
+}
+
+.button-one[aria-expanded="true"] .bottom {
+    rotate: -45deg;
+}
+
+.mat-toolbar-row {
+    // padding: 0;
+}

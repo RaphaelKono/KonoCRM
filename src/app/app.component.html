@@ -1,7 +1,5 @@
 <mat-drawer-container class="app-container" autosize>
-    <mat-drawer class="sidenav" mode="side" [opened]="true" #drawer *ngIf="true">
-        <app-main-sidenav></app-main-sidenav>
-    </mat-drawer>
+    <app-main-sidenav></app-main-sidenav>
     <app-main-content></app-main-content>
     <!-- <div class="main-content">
         <mat-toolbar color="primary" *ngIf="true">
@@ -21,7 +19,6 @@
         </mat-toolbar>
         <router-outlet style="display: flex; align-items: center; justify-content:center; height:calc(100vh - 64px);">Hallo</router-outlet>
     </div> -->
-
 </mat-drawer-container>
 
 <!-- Put in *ngIfs for router outlet for login-router -->
