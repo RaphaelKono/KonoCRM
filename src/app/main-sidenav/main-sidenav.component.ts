@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SidenavTogglerService } from '../services/sidenav-toggler.service';
 
 @Component({
@@ -6,9 +6,18 @@ import { SidenavTogglerService } from '../services/sidenav-toggler.service';
   templateUrl: './main-sidenav.component.html',
   styleUrls: ['./main-sidenav.component.scss']
 })
-export class MainSidenavComponent {
+export class MainSidenavComponent implements OnInit {
 
-  constructor(public sidenavToggle: SidenavTogglerService){}
+  @ViewChild('drawer') drawer: any;
 
-  
+  constructor(public sidenavToggle: SidenavTogglerService){
+    
+  }
+
+  ngOnInit(): void {
+    console.log(this.drawer);
+    this.sidenavToggle.getDrawer(this.drawer);
+  }
+
+
 }

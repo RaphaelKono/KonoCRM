@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+$sidenavWidth: 20%;
 html,
 body {
     height: 100%;
@@ -18,4 +19,14 @@ figure,
 button {
     margin: 0;
     padding: 0;
+}
+
+.sidenav {
+    padding: 20px;
+    width: $sidenavWidth;
+}
+
+.main-content {
+    margin-left: $sidenavWidth;
+    transition: margin 150ms ease-in-out;
 }
