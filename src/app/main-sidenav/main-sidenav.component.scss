@@ -1,13 +1,14 @@
 $padding-dashboard: 1rem;
-.logo-fig {
-    margin-bottom: 2rem;
-    padding: $padding-dashboard;
-}
-
 .logo-img {
+    display: block;
     height: 48px;
     width: 48px;
-    display: block;
+    margin-bottom: 2rem;
+    padding: $padding-dashboard;
+    transition: transform 125ms ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .menu-items {
@@ -16,6 +17,12 @@ $padding-dashboard: 1rem;
     li {
         padding: $padding-dashboard;
         cursor: pointer;
+        a {
+            text-decoration: none;
+            height: 100%;
+            width: 100%;
+            color: black;
+        }
         &:hover {
             background-color: rgba(0, 0, 0, 0.1);
         }
