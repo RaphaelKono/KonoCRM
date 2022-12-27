@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidenavTogglerService } from '../services/sidenav-toggler.service';
 
 @Component({
   selector: 'app-main-sidenav',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-sidenav.component.scss']
 })
 export class MainSidenavComponent {
+
+  constructor(public sidenavToggle: SidenavTogglerService){}
+
+  
 }
