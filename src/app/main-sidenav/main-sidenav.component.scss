@@ -1,5 +1,23 @@
-.logo {
+$padding-dashboard: 1rem;
+.logo-fig {
+    margin-bottom: 2rem;
+    padding: $padding-dashboard;
+}
+
+.logo-img {
     height: 48px;
     width: 48px;
     display: block;
+}
+
+.menu-items {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+        padding: $padding-dashboard;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
 }

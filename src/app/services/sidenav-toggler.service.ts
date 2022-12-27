@@ -6,25 +6,34 @@ import { Injectable, ViewChild } from '@angular/core';
 export class SidenavTogglerService {
 
   drawer: any = '';
-  
+
   constructor() { }
 
-  getDrawer(drawer: any){
-    console.log('Drawer looks like this: ',drawer);
+  getDrawer(drawer: any) {
     this.drawer = drawer;
   }
 
-  updateSidenav(hamburger: any){
+  updateSidenav(hamburger: any) {
     let button = hamburger.nativeElement;
     const currentState = button.getAttribute("data-state");
-    if (!currentState || currentState === "closed") {
-      button.setAttribute("data-state", "opened");
-      button.setAttribute("aria-expanded", "true");
-    } else {
-      button.setAttribute("data-state", "closed");
-      button.setAttribute("aria-expanded", "false");
-    }
-    console.log(this.drawer);
+    this.changeBtnSetting(currentState, button)
     this.drawer.toggle();
+  }
+
+  changeBtnSetting(currentState: any, button: any) {
+    if (!currentState || currentState === "closed")
+      this.openBtnSetting(button)
+    else
+      this.closeBtnSetting(button)
+  }
+
+  openBtnSetting(button: any) {
+    button.setAttribute("data-state", "opened");
+    button.setAttribute("aria-expanded", "true");
+  }
+
+  closeBtnSetting(button: any) {
+    button.setAttribute("data-state", "closed");
+    button.setAttribute("aria-expanded", "false");
   }
 }

@@ -12,13 +12,20 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MainSidenavComponent } from './main-sidenav/main-sidenav.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { UserComponent } from './user/user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainSidenavComponent,
     MainContentComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    UserComponent,
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatIconModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,10 +8,9 @@ import { SidenavTogglerService } from './services/sidenav-toggler.service';
 })
 export class AppComponent {
 
-  title = 'KonoCRM';
-
   @ViewChild('drawer') drawer: any;
-  
+
+  title = 'KonoCRM';
 
   constructor(public sidenavToggle: SidenavTogglerService){ }
 
