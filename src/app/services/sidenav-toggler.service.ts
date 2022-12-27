@@ -10,11 +10,11 @@ export class SidenavTogglerService {
   constructor() { }
 
   getDrawer(drawer: any){
-    console.log(drawer);
+    console.log('Drawer looks like this: ',drawer);
     this.drawer = drawer;
   }
 
-  updateSidenav(hamburger: any, drawer: any){
+  updateSidenav(hamburger: any){
     let button = hamburger.nativeElement;
     const currentState = button.getAttribute("data-state");
     if (!currentState || currentState === "closed") {
