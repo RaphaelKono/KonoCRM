@@ -59,7 +59,7 @@
         <div mat-dialog-actions>
             <button type="button" mat-button (click)="onNoClick()">Cancel</button>
             <button type="submit" mat-button cdkFocusInitial>Save</button>
-
         </div>
     </form>
 </div>
+<mat-progress-bar *ngIf="addUserInProgress" mode="indeterminate"></mat-progress-bar>

@@ -24,4 +24,19 @@ export class User {
         this.telephone = obj ? obj.telephone: '';
         this.email = obj ? obj.email: '';
     }
+
+    public toJson() {
+        return {
+            title: this.title,
+            firstName: this.firstName,
+            lastName: this.lastName,
+            birthDate: this.birthDate,
+            street: this.street,
+            streetNo: this.streetNo,
+            postcode: this.postcode,
+            city: this.city,
+            telephone: this.telephone,
+            email: this.email
+        }
+    }
 }

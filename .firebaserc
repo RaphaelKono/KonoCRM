@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "konocrm",
+    "konocrm": "konocrm"
+  },
+  "targets": {
+    "konocrm": {
+      "hosting": {
+        "KonoCRM": [
+          "konocrm"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
