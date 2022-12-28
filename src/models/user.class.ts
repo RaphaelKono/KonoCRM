@@ -1,6 +1,7 @@
 import { EmailValidator } from "@angular/forms";
 
 export class User {
+    title: string;
     firstName: string;
     lastName: string;
     birthDate: Date;
@@ -12,6 +13,7 @@ export class User {
     email: EmailValidator;
 
     constructor(obj?: any){
+        this.title = obj ? obj.title : '';
         this.firstName = obj ? obj.firstName: '';
         this.lastName = obj ? obj.lastName: '';
         this.birthDate = obj ? obj.birthDate: '';

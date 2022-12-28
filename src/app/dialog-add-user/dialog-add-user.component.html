@@ -1,14 +1,14 @@
 <h1 mat-dialog-title>Add user</h1>
 <div mat-dialog-content class="form-container">
-    <form class="add-user-form">
+    <form class="add-user-form" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
         <div class="form-twin">
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Title</mat-label>
-                <input matInput placeholder="Dr. rer. nat.">
+                <input matInput placeholder="Dr. rer. nat." formControlName="title">
             </mat-form-field>
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Birth date</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker" formControlName="birthDate">
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker">
                     <mat-icon matDatepickerToggleIcon><img src="../../assets/img/calendar.png"></mat-icon>
@@ -19,46 +19,47 @@
         <div class="form-twin">
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>First Name</mat-label>
-                <input matInput placeholder="John">
+                <input matInput placeholder="John" formControlName="firstName">
             </mat-form-field>
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Last Name</mat-label>
-                <input matInput placeholder="Sample">
+                <input matInput placeholder="Sample" formControlName="lastName">
             </mat-form-field>
         </div>
         <div class="form-twin">
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Street</mat-label>
-                <input matInput placeholder="Any Street">
+                <input matInput placeholder="Any Street" formControlName="street">
             </mat-form-field>
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Street Number</mat-label>
-                <input matInput placeholder="123">
+                <input matInput placeholder="123" formControlName="streetNo">
             </mat-form-field>
         </div>
         <div class="form-twin">
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Post Code</mat-label>
-                <input matInput placeholder="49765">
+                <input matInput placeholder="49765" formControlName="postcode">
             </mat-form-field>
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>City</mat-label>
-                <input matInput placeholder="Any City">
+                <input matInput placeholder="Any City" formControlName="city">
             </mat-form-field>
         </div>
         <div class="form-twin">
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Telephone</mat-label>
-                <input matInput placeholder="+49 (0)">
+                <input matInput placeholder="+49 (0)" formControlName="telephone">
             </mat-form-field>
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="name@adress.com">
+                <input matInput placeholder="name@adress.com" formControlName="email">
             </mat-form-field>
         </div>
+        <div mat-dialog-actions>
+            <button type="button" mat-button (click)="onNoClick()">Cancel</button>
+            <button type="submit" mat-button cdkFocusInitial>Save</button>
+
+        </div>
     </form>
-</div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button [mat-dialog-close]="" cdkFocusInitial>Save</button>
 </div>

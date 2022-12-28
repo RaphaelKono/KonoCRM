@@ -9,7 +9,9 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
 })
 export class UserComponent {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+    
+  }
 
 
   openDialog(): void {
