@@ -1,0 +1,15 @@
+.example-full-width {
+    width: 100%;
+}
+
+.add-user-form {
+    padding-block: 1rem;
+}
+
+.form-twin {
+    display: flex;
+    gap: 1rem;
+    mat-form-field {
+        margin-top: 1rem;
+    }
+}

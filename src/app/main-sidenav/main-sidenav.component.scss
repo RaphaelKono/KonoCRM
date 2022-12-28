@@ -15,13 +15,14 @@ $padding-dashboard: 1rem;
     list-style-type: none;
     padding-left: 0;
     li {
-        padding: $padding-dashboard;
         cursor: pointer;
         a {
+            display: block;
             text-decoration: none;
             height: 100%;
             width: 100%;
             color: black;
+            padding-block: $padding-dashboard;
         }
         &:hover {
             background-color: rgba(0, 0, 0, 0.1);

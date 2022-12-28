@@ -17,6 +17,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // Others
 
@@ -29,7 +35,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ToolbarComponent,
     UserComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    DialogAddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,12 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatIconModule,
     MatSidenavModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

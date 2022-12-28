@@ -19,3 +19,31 @@ button {
     margin: 0;
     padding: 0;
 }
+
+
+/* ===== Scrollbar CSS ===== */
+
+
+/* Firefox */
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #3f51b5 #ffffff;
+}
+
+
+/* Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #3f51b5;
+    border-radius: 7px;
+    border: 3px solid #ffffff;
+}
