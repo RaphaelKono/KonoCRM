@@ -14,17 +14,17 @@
                     <th>Telephone</th>
                     <th>Email</th>
                 </tr>
-                <tr>
-                    <td>Dr.</td>
-                    <td>Stanislaw</td>
-                    <td>Witschikowski</td>
-                    <td>23.09.1954</td>
-                    <td>Kurt-Schumacher-Straße</td>
-                    <td>354</td>
-                    <td>46712</td>
-                    <td>Ochsenhausen</td>
-                    <td>+4980430539423</td>
-                    <td>stanislaw_witschikowski@hotmail.com</td>
+                <tr *ngFor="let user of users">
+                    <td>{{user.title}}</td>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.birthDate}}</td>
+                    <td>{{user.street}}</td>
+                    <td>{{user.streetNo}}</td>
+                    <td>{{user.postcode}}</td>
+                    <td>{{user.city}}</td>
+                    <td>{{user.telephone}}</td>
+                    <td>{{user.email}}</td>
                 </tr>
                 <tr>
                     <td>Dr.</td>

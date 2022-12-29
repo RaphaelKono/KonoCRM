@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { collection, doc, docData, Firestore, onSnapshot } from '@angular/fire/firestore';
+import { collection, collectionData, doc, docData, Firestore, onSnapshot, setDoc, updateDoc } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
 
 @Component({
@@ -10,14 +11,16 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
 })
 export class UserComponent {
 
+  users$: Observable<any>;
+  users: any[] = [];
+
   constructor(public dialog: MatDialog, private firestore: Firestore) {
-    let coll = collection(this.firestore, 'users');
-    let docRef = doc(coll);
-    let users$ = docData(docRef);
-    users$.subscribe((user) => console.log(user));
-    //   const unsub = onSnapshot(doc(coll), (doc) => {
-    //     console.log("Current data: ", doc.data());
-    // });
+    let coll = collection(firestore, 'users');
+    this.users$ = collectionData(coll);
+    this.users$.subscribe((user) => {
+      this.users = user;
+    });
+    this.tryfunction(coll);
   }
 
 
@@ -27,5 +30,20 @@ export class UserComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed with result: ' + result);
     });
+  }
+
+  async tryfunction(coll) {
+    await setDoc(doc(collection(this.firestore, 'testusers'),'Frank'), {
+      name: 'Frank',
+      favorites: {
+        food: 'Pizza',
+        color: 'blue'
+      },
+      age: 12
+    });
+
+
+    const userRef = doc(this.firestore, 'testusers', 'Frank');
+    await updateDoc(userRef,{favorites:{'food':'Ice Cream'}});
   }
 }
