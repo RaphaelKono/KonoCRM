@@ -1,4 +1,58 @@
+.user-container {
+    height: calc(100vh - 64px);
+    mat-card {
+        margin: 1.5rem;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .mat-mdc-card-content {
+        padding-inline: 0;
+    }
+}
+
+mat-card {
+    padding: 0;
+}
+
+.users-table {
+    width: 100%;
+    font-size: .8rem;
+    border-collapse: collapse;
+    padding: 5rem;
+    tr {
+        border-bottom: 1px solid #a8a8a8;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+        &:first-child {
+            cursor: unset;
+            &:hover {
+                background-color: unset;
+            }
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+    th {
+        font-size: .9rem;
+        color: #a8a8a8;
+        padding: .4rem;
+    }
+    td {
+        padding: .4rem;
+    }
+}
+
+.add-user-btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .add-user-btn {
+    margin: 1.5rem;
     .mat-icon {
         height: unset;
         width: unset;

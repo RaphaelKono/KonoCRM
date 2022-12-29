@@ -1,3 +1,49 @@
-<button (click)="openDialog()" mat-fab color="primary" matTooltip="Add user" [matTooltipPosition]="'above'" aria-label="Button to add user" class="add-user-btn">
-    <mat-icon>+</mat-icon>
-</button>
+<div class="user-container">
+    <mat-card>
+        <mat-card-content>
+            <table class="users-table">
+                <tr>
+                    <th>Title</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Birth date</th>
+                    <th>Street</th>
+                    <th>Street No</th>
+                    <th>Post code</th>
+                    <th>City</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>Dr.</td>
+                    <td>Stanislaw</td>
+                    <td>Witschikowski</td>
+                    <td>23.09.1954</td>
+                    <td>Kurt-Schumacher-Straße</td>
+                    <td>354</td>
+                    <td>46712</td>
+                    <td>Ochsenhausen</td>
+                    <td>+4980430539423</td>
+                    <td>stanislaw_witschikowski@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td>Dr.</td>
+                    <td>Stanislaw</td>
+                    <td>Witschikowski</td>
+                    <td>23.09.1954</td>
+                    <td>Kurt-Schumacher-Straße</td>
+                    <td>354</td>
+                    <td>46712</td>
+                    <td>Ochsenhausen</td>
+                    <td>+4980430539423</td>
+                    <td>stanislaw_witschikowski@hotmail.com</td>
+                </tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+    <div class="add-user-btn-container">
+        <button (click)="openDialog()" mat-fab color="primary" matTooltip="Add user" [matTooltipPosition]="'above'" aria-label="Button to add user" class="add-user-btn">
+            <mat-icon>+</mat-icon>
+        </button>
+    </div>
+</div>
