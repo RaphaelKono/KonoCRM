@@ -26,6 +26,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 
 // Angular Fire
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -33,6 +34,9 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { CorrectDateFormatPipe } from './pipes/correct-date-format.pipe';
 
 // Others
 
@@ -46,7 +50,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     UserComponent,
     DashboardComponent,
     LoginComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailComponent,
+    DialogEditUserComponent,
+    CorrectDateFormatPipe
   ],
   imports: [
     BrowserModule,
@@ -69,7 +76,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     MatProgressBarModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

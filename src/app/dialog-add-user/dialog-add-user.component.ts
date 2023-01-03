@@ -22,7 +22,7 @@ export class DialogAddUserComponent {
     title: new FormControl(this.user.title),
     firstName: new FormControl(this.user.firstName, [Validators.required, Validators.minLength(2)]),
     lastName: new FormControl(this.user.lastName, [Validators.required, Validators.minLength(2)]),
-    birthDate: new FormControl(this.user.birthDate, [Validators.required]),
+    birthDate: new FormControl(new Date(this.user.birthDate.seconds), [Validators.required]),
     street: new FormControl(this.user.street, Validators.required),
     streetNo: new FormControl(this.user.streetNo, [Validators.required, Validators.pattern(this.streetNoPattern)]),
     postcode: new FormControl(this.user.postcode, Validators.required),
@@ -31,19 +31,14 @@ export class DialogAddUserComponent {
     email: new FormControl(this.user.email, [Validators.required, Validators.email, Validators.pattern(this.emailPattern)])
   });
 
-
   constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>, private firestore: Firestore) { }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
 
   async onSubmit() {
     this.addUserInProgress = true;
     if (this.addUserForm.valid) {
       this.addUserForm.disable();
       this.editUser();
-      await this.saveUser();
+      await this.saveNewUser();
       this.dialogRef.close();
       this.addUserForm.enable();
     }
@@ -61,11 +56,9 @@ export class DialogAddUserComponent {
     this.user.city = this.addUserForm.value.city;
     this.user.telephone = this.addUserForm.value.telephone;
     this.user.email = this.addUserForm.value.email;
-    console.log('submit form is ', this.addUserForm);
-    console.log('submitting user', this.user);
   }
 
-  async saveUser() {
+  async saveNewUser() {
     let coll = collection(this.firestore, 'users');
     await setDoc(doc(coll), this.user.toJson());
   }

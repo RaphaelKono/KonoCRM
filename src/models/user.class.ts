@@ -4,7 +4,7 @@ export class User {
     title: string;
     firstName: string;
     lastName: string;
-    birthDate: Date;
+    birthDate: any;
     street: string;
     streetNo: number;
     postcode: number;
