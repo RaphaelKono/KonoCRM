@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 import { MainSidenavComponent } from './main-sidenav.component';
 
@@ -8,7 +9,9 @@ describe('MainSidenavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainSidenavComponent ]
+      imports:[RouterModule],
+      declarations: [ MainSidenavComponent ],
+      providers:[ActivatedRoute]
     })
     .compileComponents();
 

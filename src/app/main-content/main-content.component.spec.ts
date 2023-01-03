@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
 
 import { MainContentComponent } from './main-content.component';
 
@@ -8,7 +11,9 @@ describe('MainContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainContentComponent ]
+      imports:[RouterModule, MatToolbarModule],
+      declarations: [ MainContentComponent,ToolbarComponent ],
+      providers: []
     })
     .compileComponents();
 

@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { UserFormService } from '../services/user-form.service';
+import { UserDetailComponent } from '../user-detail/user-detail.component';
 
 import { DialogEditUserComponent } from './dialog-edit-user.component';
 
@@ -8,9 +11,14 @@ describe('DialogEditUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogEditUserComponent ]
+      imports: [MatDialogModule],
+      declarations: [DialogEditUserComponent],
+      providers: [UserDetailComponent, UserFormService,{
+        provide: MatDialogRef,
+        useValue: []
+      }]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DialogEditUserComponent);
     component = fixture.componentInstance;

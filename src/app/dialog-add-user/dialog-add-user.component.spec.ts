@@ -1,4 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Firestore } from '@angular/fire/firestore';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 import { DialogAddUserComponent } from './dialog-add-user.component';
 
@@ -8,7 +15,15 @@ describe('DialogAddUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogAddUserComponent ]
+      imports:[FormsModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatNativeDateModule,MatDatepickerModule],
+      declarations: [ DialogAddUserComponent ],
+      providers:[{
+        provide: MatDialogRef,
+        useValue: {}
+      },{
+        provide: Firestore,
+        useValue: {}
+      }]
     })
     .compileComponents();
 
