@@ -8,7 +8,10 @@ describe('UserFormService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[ Firestore]
+      imports:[],
+      providers:[
+        {provide: Firestore,useValue:{}}
+      ]
     });
     service = TestBed.inject(UserFormService);
   });

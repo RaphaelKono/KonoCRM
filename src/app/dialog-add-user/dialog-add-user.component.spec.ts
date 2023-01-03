@@ -6,6 +6,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DialogAddUserComponent } from './dialog-add-user.component';
 
@@ -15,7 +17,7 @@ describe('DialogAddUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[FormsModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatNativeDateModule,MatDatepickerModule],
+      imports:[FormsModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatNativeDateModule,MatDatepickerModule, MatInputModule, BrowserAnimationsModule],
       declarations: [ DialogAddUserComponent ],
       providers:[{
         provide: MatDialogRef,

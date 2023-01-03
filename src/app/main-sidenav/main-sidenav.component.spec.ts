@@ -11,7 +11,7 @@ describe('MainSidenavComponent', () => {
     await TestBed.configureTestingModule({
       imports:[RouterModule],
       declarations: [ MainSidenavComponent ],
-      providers:[ActivatedRoute]
+      providers:[{provide:ActivatedRoute,useValue:{}}]
     })
     .compileComponents();
 

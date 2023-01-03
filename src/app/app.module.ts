@@ -10,6 +10,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Material Design Modules
@@ -30,16 +32,15 @@ import {MatMenuModule} from '@angular/material/menu';
 
 // Angular Fire
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
-import { CorrectDateFormatPipe } from './pipes/correct-date-format.pipe';
+
+
 
 // Others
-
+import { CorrectDateFormatPipe } from './pipes/correct-date-format.pipe';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
