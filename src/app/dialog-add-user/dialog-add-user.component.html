@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Add user</h1>
 <div mat-dialog-content class="form-container">
-    <form class="add-user-form" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <form class="add-user-form" [formGroup]="userForm" (ngSubmit)="addUserHelper.onSubmit(userForm, user, dialogRef, true)">
         <div class="form-twin">
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Title</mat-label>
@@ -62,4 +62,4 @@
         </div>
     </form>
 </div>
-<mat-progress-bar *ngIf="addUserInProgress" mode="indeterminate"></mat-progress-bar>
+<mat-progress-bar *ngIf="addUserHelper.userInProgress" mode="indeterminate"></mat-progress-bar>

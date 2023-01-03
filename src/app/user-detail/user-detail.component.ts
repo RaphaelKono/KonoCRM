@@ -51,5 +51,6 @@ export class UserDetailComponent {
         userID: this.userID
       }
     });
+    // dialogRef.componentInstance.user = this.user;
   }
 }
