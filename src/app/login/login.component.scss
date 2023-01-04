@@ -1,0 +1,43 @@
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.login-card {
+    max-width: 400px;
+    min-width: 280px;
+    img {
+        height: 3rem;
+        width: 3rem;
+    }
+    .mat-mdc-card-header {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.login-header {
+    h1 {
+        margin-top: 1.5rem;
+    }
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up-link {
+    text-decoration: none;
+    color: #3f51b5;
+    &:hover {
+        font-weight: 700;
+    }
+}
+
+.ask-for-registration {
+    font-size: .8rem;
+}

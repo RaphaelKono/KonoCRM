@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { SidenavTogglerService } from './services/sidenav-toggler.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class AppComponent {
 
   title = 'KonoCRM';
 
-  constructor(public sidenavToggle: SidenavTogglerService){ }
+  constructor(public sidenavToggle: SidenavTogglerService, public router: Router){ }
 
   ngAfterViewInit(){
     this.sidenavToggle.getDrawer(this.drawer);

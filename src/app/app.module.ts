@@ -29,6 +29,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDividerModule} from '@angular/material/divider';
 
 // Angular Fire
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -41,6 +42,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 // Others
 import { CorrectDateFormatPipe } from './pipes/correct-date-format.pipe';
 import { environment } from '../environments/environment';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,10 @@ import { environment } from '../environments/environment';
     DialogAddUserComponent,
     UserDetailComponent,
     DialogEditUserComponent,
-    CorrectDateFormatPipe
+    CorrectDateFormatPipe,
+    LoginFormComponent,
+    RegisterFormComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +85,8 @@ import { environment } from '../environments/environment';
     provideFirestore(() => getFirestore()),
     MatProgressBarModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 <div class="main-content">
-    <app-toolbar></app-toolbar>
+    <app-toolbar *ngIf="router.url !== '/' && router.url !== '/register'"></app-toolbar>
     <div>
         <router-outlet></router-outlet>
     </div>

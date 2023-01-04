@@ -1,5 +1,5 @@
 <mat-drawer-container class="app-container" autosize>
-    <mat-drawer class="sidenav" mode="side" [opened]="true" *ngIf="true" #drawer>
+    <mat-drawer class="sidenav" mode="side" [opened]="true" *ngIf="router.url !== '/' && router.url !== '/register'" #drawer>
         <app-main-sidenav></app-main-sidenav>
     </mat-drawer>
     <app-main-content></app-main-content>
